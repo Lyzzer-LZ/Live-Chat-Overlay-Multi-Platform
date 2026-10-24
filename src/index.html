@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="id"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self'; script-src 'self'">
+  <title>Multi Live Chat Overlay</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="controls.css"><link rel="stylesheet" href="multi.css"><link rel="stylesheet" href="theme.css">
+</head><body>
+<main class="panel">
+  <header class="titlebar" data-drag><div class="brand"><i></i><b>LIVE</b><span id="duration">00:00:00</span></div><div class="creator-watermark credits" title="Original: Rizki Fadhillah · Enhanced by Lyzzer"><span class="credit"><em>original</em>Rizki Fadhillah</span><span class="credit mine"><em>enhanced</em>Lyzzer</span></div><div class="actions"><button id="min">—</button><button id="close">×</button></div></header>
+  <section id="setup" class="setup"><div class="setup-head"><label>Tambah sumber LIVE</label><button id="setup-toggle" title="Minimize bagian sumber">⌃</button></div><div id="setup-content"><form id="form"><div class="source-form"><select id="platform"><option value="tiktok">TikTok</option><option value="youtube">YouTube</option><option value="twitch">Twitch</option></select><input id="target" placeholder="Username atau URL LIVE" required><button id="connect">Tambah</button></div><p id="error"></p></form><div id="sources" class="sources"></div></div></section>
+  <section class="statusbar" data-drag><div id="status" class="status idle"><i></i><span>Belum ada stream</span></div><button id="gear">⚙</button></section>
+  <section id="platform-stats" class="platform-stats" hidden></section>
+  <section id="top" class="top" hidden>
+    <div class="top-head"><span class="top-title">🏆 Top viewers</span><span id="top-source" class="top-source"></span></div>
+    <div id="top-list"></div>
+  </section>
+  <section id="join" class="join" hidden>
+    <div id="join-list" class="join-list" tabindex="0" aria-label="Riwayat penonton yang bergabung"></div>
+    <button type="button" id="join-latest" class="join-latest" title="Ke yang terbaru" aria-label="Ke penonton terbaru" hidden>↓</button>
+  </section>
+  <section id="gift-pin" class="gift-pin" hidden>
+    <div id="gift-list" class="gift-list" tabindex="0" aria-label="Gift yang disematkan"></div>
+    <button type="button" id="gift-latest" class="gift-latest" title="Ke gift terbaru" aria-label="Ke gift terbaru" hidden>↓</button>
+  </section>
+  <section id="settings" class="settings" hidden>
+    <div class="settings-head"><b>Pengaturan overlay</b><button id="settings-close" title="Tutup pengaturan">×</button></div>
+    <div class="tabs" role="tablist" aria-label="Kategori pengaturan">
+      <button type="button" class="tab" role="tab" data-tab="ukuran" aria-selected="true">Ukuran</button>
+      <button type="button" class="tab" role="tab" data-tab="bergabung" aria-selected="false">Bergabung</button>
+      <button type="button" class="tab" role="tab" data-tab="gift" aria-selected="false">Gift</button>
+      <button type="button" class="tab" role="tab" data-tab="tema" aria-selected="false">Tema</button>
+      <button type="button" class="tab" role="tab" data-tab="filter" aria-selected="false">Filter</button>
+      <button type="button" class="tab" role="tab" data-tab="lainnya" aria-selected="false">Lainnya</button>
+    </div>
+    <div class="settings-body">
+      <div class="pane" role="tabpanel" data-pane="ukuran">
+        <div class="group">
+          <div class="group-title">Total view &amp; like</div>
+          <p class="group-hint">Angka penonton dan jumlah suka di bagian atas.</p>
+          <label class="srow"><span>Ukuran angka</span><input type="range" data-setting="sizeStats" min="12" max="40"><output data-out="sizeStats"></output></label>
+        </div>
+        <div class="group">
+          <div class="group-title">Top viewers</div>
+          <p class="group-hint">Kartu juara 1 sampai 3 beserta nama dan fotonya.</p>
+          <label class="srow"><span>Ukuran kartu</span><input type="range" data-setting="sizeTop" min="8" max="20"><output data-out="sizeTop"></output></label>
+        </div>
+        <div class="group">
+          <div class="group-title">Kolom komentar</div>
+          <p class="group-hint">Aktivitas = teks follow, share, repost, dan gift yang tidak disematkan.</p>
+          <label class="srow"><span>Komentar</span><input type="range" data-setting="sizeChat" min="12" max="32"><output data-out="sizeChat"></output></label>
+          <label class="srow"><span>Username</span><input type="range" data-setting="sizeName" min="9" max="22"><output data-out="sizeName"></output></label>
+          <label class="srow"><span>Aktivitas</span><input type="range" data-setting="sizeActivity" min="9" max="24"><output data-out="sizeActivity"></output></label>
+          <label class="srow"><span>Ukuran profil</span><input type="range" data-setting="avatar" min="24" max="56"><output data-out="avatar"></output></label>
+        </div>
+      </div>
+      <div class="pane" role="tabpanel" data-pane="bergabung" hidden>
+        <div class="srow stack"><span>Posisi notif bergabung</span><div class="segmented" role="group" aria-label="Posisi notif bergabung"><button type="button" data-choice="joinPos" data-value="atas" aria-pressed="true">Di atas chat</button><button type="button" data-choice="joinPos" data-value="bawah" aria-pressed="false">Di bawah chat</button></div></div>
+        <label class="srow"><span>Ukuran teks</span><input type="range" data-setting="sizeJoin" min="9" max="22"><output data-out="sizeJoin"></output></label>
+        <label class="srow"><span>Riwayat tampil</span><input type="range" data-setting="joinRows" min="1" max="3"><output data-out="joinRows"></output></label>
+        <p class="hint">Riwayat tampil = jumlah baris yang terlihat sekaligus. Scroll di kotaknya untuk melihat yang sebelumnya. Nyala/matinya notif ini ada di tab Filter.</p>
+      </div>
+      <div class="pane" role="tabpanel" data-pane="gift" hidden>
+        <label class="srow toggle"><span>Sematkan gift</span><input type="checkbox" class="switch" data-setting="pinGift"></label>
+        <p class="hint">Mati: gift tercampur di chat memakai ukuran "Aktivitas". Nyala: gift pindah ke kolom sendiri dengan ukurannya sendiri. Ukuran gift hanya bisa diubah saat Sematkan gift nyala.</p>
+        <div class="srow stack"><span>Posisi kolom gift</span><div class="segmented" role="group" aria-label="Posisi kolom gift"><button type="button" data-choice="giftPos" data-value="atas" aria-pressed="true">Di atas chat</button><button type="button" data-choice="giftPos" data-value="bawah" aria-pressed="false">Di bawah chat</button></div></div>
+        <label class="srow"><span>Ukuran teks</span><input type="range" data-setting="sizeGift" min="9" max="22"><output data-out="sizeGift"></output></label>
+        <label class="srow"><span>Baris tampil</span><input type="range" data-setting="giftRows" min="1" max="4"><output data-out="giftRows"></output></label>
+        <p class="hint">Kolom gift selalu menempel ke chat, jadi tidak pernah melewati kolom bergabung.</p>
+      </div>
+      <div class="pane" role="tabpanel" data-pane="tema" hidden>
+        <div class="srow stack"><span>Warna aksen <output data-out="accent"></output></span><div id="accent-swatches" class="swatches" role="group" aria-label="Warna aksen"></div></div>
+        <div class="srow stack"><span>Latar panel <output data-out="bg"></output></span><div id="bg-swatches" class="swatches" role="group" aria-label="Latar panel"></div></div>
+        <label class="srow"><span>Opasitas panel</span><input type="range" data-setting="opacity" min="30" max="100"><output data-out="opacity"></output></label>
+        <p class="hint">Warna badge TikTok, YouTube, dan Twitch tetap warna platformnya.</p>
+      </div>
+      <div class="pane" role="tabpanel" data-pane="filter" hidden>
+        <div class="group">
+          <div class="group-title">Bagian layar</div>
+          <label class="srow toggle"><span>Total view &amp; like</span><input type="checkbox" class="switch" data-setting="showStats"></label>
+          <label class="srow toggle"><span>Top viewers</span><input type="checkbox" class="switch" data-setting="showTop"></label>
+          <label class="srow toggle"><span>Notif bergabung</span><input type="checkbox" class="switch" data-setting="showJoin"></label>
+          <label class="srow toggle"><span>Badge platform</span><input type="checkbox" class="switch" data-setting="showBadge"></label>
+        </div>
+        <div class="group">
+          <div class="group-title">Pesan di chat</div>
+          <label class="srow toggle"><span>Komentar</span><input type="checkbox" class="switch" data-setting="showChat"></label>
+          <label class="srow toggle"><span>Gift</span><input type="checkbox" class="switch" data-setting="showGift"></label>
+          <label class="srow toggle"><span>Follow</span><input type="checkbox" class="switch" data-setting="showFollow"></label>
+          <label class="srow toggle"><span>Share</span><input type="checkbox" class="switch" data-setting="showShare"></label>
+          <label class="srow toggle"><span>Repost</span><input type="checkbox" class="switch" data-setting="showRepost"></label>
+          <p class="hint">Hanya menyembunyikan tampilan. Riwayatnya tetap ada dan muncul lagi saat dinyalakan.</p>
+        </div>
+      </div>
+      <div class="pane" role="tabpanel" data-pane="lainnya" hidden>
+        <div class="size-setting"><span>Ukuran jendela</span><div><button data-size="small">Kecil</button><button data-size="medium">Sedang</button><button data-size="large">Besar</button></div></div>
+        <label class="srow toggle"><span>Selalu di atas</span><input id="topmost" type="checkbox" class="switch" checked></label>
+        <p class="shortcut-help">Selalu di atas: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd></p>
+        <label class="srow toggle"><span>Klik tembus</span><input id="passthrough" type="checkbox" class="switch"></label>
+        <p class="shortcut-help">Klik tembus &amp; munculkan kembali: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd></p>
+        <div class="group">
+          <div class="group-title">Tampilan ringkas</div>
+          <label class="srow toggle"><span>Solo stream</span><input type="checkbox" class="switch" data-setting="soloStream"></label>
+          <p class="hint">Sembunyikan nama platform dan username di kolom view &amp; like dan Top viewers, jadi kolomnya lebih kecil. Hanya berlaku saat 1 stream aktif.</p>
+        </div>
+        <div class="group">
+          <div class="group-title">Foto profil</div>
+          <label class="srow toggle"><span>Sembunyikan foto profil</span><input type="checkbox" class="switch" data-setting="hideProfile"></label>
+          <p class="hint">Nyala: foto profil di komentar, notif bergabung, gift sematan, dan Top viewers tidak dimuat sama sekali, jadi RAM dan data internet lebih hemat. Foto yang sudah tampil ikut dibuang. Ukuran profil terkunci selama ini nyala.</p>
+        </div>
+        <div class="group">
+          <div class="group-title">Mode memori</div>
+          <div class="segmented three" role="group" aria-label="Mode memori"><button type="button" data-choice="memory" data-value="high" aria-pressed="false">High memory</button><button type="button" data-choice="memory" data-value="normal" aria-pressed="true">Normal memory</button><button type="button" data-choice="memory" data-value="low" aria-pressed="false">Low memory</button></div>
+          <p class="hint" id="memory-hint"></p>
+        </div>
+        <div class="mobile-link"><span>Android companion</span><code id="mobile-url">Menyiapkan server…</code><button id="copy-mobile-url">Salin link</button></div>
+        <button type="button" id="reset-settings" class="reset">Kembalikan tampilan ke pengaturan awal</button>
+      </div>
+    </div>
+  </section>
+  <div class="feed-wrap">
+    <section id="feed" class="feed"><div id="empty" class="empty"><strong>•••</strong><p>Komentar akan muncul di sini</p></div></section>
+    <button type="button" id="new-msg" class="new-msg" hidden>↓ <span id="new-count">0</span> pesan baru</button>
+  </div>
+  <footer data-drag><span id="count">0 komentar</span><span id="app-version" class="app-version">version 3.4.1 byLZ</span><span class="resize-help">↘ resize</span><button id="disconnect-all" hidden>Putus semua</button></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</main><script src="renderer.js"></script></body></html>

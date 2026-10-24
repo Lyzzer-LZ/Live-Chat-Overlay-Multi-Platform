@@ -1,0 +1,64 @@
+{
+  "name": "multi-live-chat-overlay",
+  "version": "3.4.1",
+  "description": "Overlay multi-stream untuk TikTok LIVE, YouTube Live, dan Twitch Chat.",
+  "author": "Rizki Fadhillah",
+  "private": true,
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "start:lite": "node --max-old-space-size=64 src/lite-server.js",
+    "dist": "electron-builder --win nsis",
+    "pack": "electron-builder --win portable",
+    "pack:linux": "electron-builder --linux tar.gz",
+    "pack:linux:appimage": "electron-builder --linux AppImage"
+  },
+  "dependencies": {
+    "tiktok-live-connector": "^2.5.0",
+    "tmi.js": "^1.8.5",
+    "youtube-chat": "^2.2.0",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.rizkif.multilivechatoverlay",
+    "productName": "Multi Live Chat Overlay",
+    "files": [
+      "src/**/*",
+      "mobile/**/*",
+      "package.json",
+      "Jalankan Lite.cmd"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "compression": "maximum",
+    "electronLanguages": [
+      "en-US",
+      "id"
+    ],
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "runAfterFinish": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Multi Live Chat Overlay",
+      "deleteAppDataOnUninstall": false,
+      "artifactName": "Multi-Live-Chat-Overlay-Setup-${version}.exe"
+    },
+    "portable": {
+      "artifactName": "Multi-Live-Chat-Overlay-${version}-Portable.exe"
+    },
+    "linux": {
+      "target": "tar.gz",
+      "category": "Utility"
+    }
+  }
+}
