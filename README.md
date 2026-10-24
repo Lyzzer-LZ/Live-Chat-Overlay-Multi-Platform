@@ -29,7 +29,6 @@ Original oleh **Rizki Fadhillah** · Disempurnakan oleh **Lyzzer**
 - [Panduan pengaturan lengkap](#-panduan-pengaturan-lengkap)
 - [Resep pengaturan](#-resep-pengaturan)
 - [Emote TikTok](#-emote-tiktok-kode-menjadi-emoji)
-- [Membuat installer .exe](#-membuat-installer-exe)
 - [Pemecahan masalah](#-pemecahan-masalah)
 - [Struktur proyek](#-struktur-proyek)
 - [Catatan, disclaimer & kredit](#-catatan-disclaimer--kredit)
