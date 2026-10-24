@@ -305,15 +305,14 @@ Membatasi **berapa banyak riwayat yang disimpan** di jendela. Entri tertua dibua
 ## 🍳 Resep pengaturan
 
 **Overlay minimalis di atas game**
-1. Tab **Tema**: turunkan **Opasitas panel** ke ±60%.
+1. Tab **Tema**: turunkan **Opasitas panel** ke ±60%, (saya lebih suka opasitas 100%).
 2. Tab **Lainnya**: nyalakan **Selalu di atas**, **Solo stream**, lalu nyalakan **Klik tembus** (atau tekan `Ctrl+Shift+X`).
 3. Tab **Filter**: matikan **Badge platform** dan **Top viewers** bila tidak diperlukan.
-4. Pilih ukuran jendela **Kecil**.
+4. Pilih ukuran jendela **Sedang**.
 
 **Hemat RAM maksimal (laptop/PC lawas)**
 1. Tab **Lainnya**: pilih **Low memory** dan nyalakan **Sembunyikan foto profil**.
 2. Tab **Filter**: matikan **Notif bergabung** bila tidak penting.
-3. Gunakan ukuran jendela **Kecil**.
 
 **Fokus ke gift**
 1. Tab **Gift**: nyalakan **Sematkan gift**, pilih posisi, dan atur **Baris tampil** 3–4.
