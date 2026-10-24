@@ -80,7 +80,6 @@ Proyek ini adalah pengembangan lanjutan dari [Tiktok-Live-Chat-Overlay](https://
 - ✋ ⭐ Jendela bisa digeser dari title bar, bar status, atau footer
 
 ### Lainnya
-- 🚀 ⭐ Installer Windows (`.exe`) otomatis lewat GitHub Actions
 - 📱 Server companion lokal dengan token akses dan 🪶 mode Lite tanpa jendela (warisan proyek asli, lihat [catatan](#-catatan-disclaimer--kredit))
 
 ---
