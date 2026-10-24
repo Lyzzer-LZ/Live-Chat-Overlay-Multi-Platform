@@ -455,8 +455,9 @@ Gunakan secara bertanggung jawab dan patuhi ketentuan platform yang berlaku.
 
 | Peran | Nama |
 |---|---|
-| **Pembuat & pemilik source asli** | **Rizki Fadhillah** — [Tiktok-Live-Chat-Overlay](https://github.com/rizkif-com/Tiktok-Live-Chat-Overlay) |
-| **Penyempurna** (fitur baru, perbaikan bug, optimasi) | **Lyzzer** (byLZ) |
+| **Pembuat Versi Sebelumnya
+(Source Code)** | **Rizki Fadhillah** — [Tiktok-Live-Chat-Overlay](https://github.com/rizkif-com/Tiktok-Live-Chat-Overlay) |
+| **Penyempurna** (fitur baru, perbaikan bug, optimasi) | **Lyzzer** (https://www.tiktok.com/@.xlyzzer) |
 
 Jika proyek ini membantu, beri ⭐ pada repository, dan jangan lupa dukung proyek aslinya.
 
@@ -464,6 +465,6 @@ Jika proyek ini membantu, beri ⭐ pada repository, dan jangan lupa dukung proye
 
 <div align="center">
 
-Made with ❤️ for TikTok LIVE creators
+Enhanced by Lyzzer for Streamers on Earth
 
 </div>
