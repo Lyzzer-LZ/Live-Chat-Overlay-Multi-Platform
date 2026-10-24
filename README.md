@@ -103,8 +103,8 @@ Mau tanpa instalasi? Unduh **`Multi-Live-Chat-Overlay-<versi>-Portable.exe`** da
 **Persyaratan:** Windows 10/11 dan [Node.js](https://nodejs.org/) versi 20 atau lebih baru (pilih versi **LTS**).
 
 ```powershell
-git clone https://github.com/USERNAME/NAMA-REPO.git
-cd NAMA-REPO
+git clone https://github.com/Lyzzer-LZ/Live-Chat-Overlay-Multi-Platform.git
+cd Live-Chat-Overlay-Multi-Platform
 ```
 
 Lalu pilih salah satu peluncur:
