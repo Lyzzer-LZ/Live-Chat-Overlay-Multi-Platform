@@ -358,35 +358,6 @@ Keduanya tampil sebagai kartu terpisah (“membagikan LIVE” dan “memposting 
 
 ---
 
-## 📦 Membuat installer .exe
-
-### Di komputermu
-
-```powershell
-npm install
-npm run dist     # installer (Setup .exe)
-npm run pack     # versi Portable
-```
-
-Hasilnya ada di folder `dist`. Ukurannya sekitar 100 MB karena ikut membawa runtime Electron/Chromium.
-
-> Kalau muncul error `Cannot create symbolic link`, aktifkan **Developer Mode** di Pengaturan Windows, atau jalankan:
-> `npx electron-builder --win nsis -c.win.signAndEditExecutable=false`
-
-### Otomatis lewat GitHub Actions
-
-Berkas `.github/workflows/build-windows.yml` membangun installer di server GitHub.
-
-1. Naikkan `"version"` di `package.json`, lalu commit dan push.
-2. Buat tag versi: `git tag v3.4.1` lalu `git push origin v3.4.1` (atau buat **Release** baru di GitHub dengan tag tersebut).
-3. Tunggu 5–10 menit (lihat tab **Actions**). Installer dan versi Portable terlampir otomatis di halaman **Releases**.
-
-Kalau repository ini hasil *fork*, aktifkan Actions dulu di tab **Actions**. Kalau muncul error izin, buka *Settings → Actions → General → Workflow permissions* dan pilih **Read and write permissions**.
-
-> Jangan menyimpan berkas `.exe` di dalam repository. Cukup lampirkan lewat Releases.
-
----
-
 ## ❓ Pemecahan masalah
 
 | Masalah | Penyebab / solusi |
