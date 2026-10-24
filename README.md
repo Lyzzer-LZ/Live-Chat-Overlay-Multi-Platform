@@ -9,7 +9,7 @@
 ![Electron](https://img.shields.io/badge/Electron-44-47848F?style=for-the-badge&logo=electron&logoColor=white)
 ![UI](https://img.shields.io/badge/UI-Bahasa%20Indonesia-25f4ee?style=for-the-badge)
 
-Original oleh **Rizki Fadhillah** · Disempurnakan oleh **Lyzzer** (byLZ)
+Original oleh **Rizki Fadhillah** · Disempurnakan oleh **Lyzzer** 
 
 <img src="docs/tampilan-utama.png" alt="Tampilan utama overlay" width="380">
 
