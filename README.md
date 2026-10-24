@@ -417,7 +417,7 @@ Keduanya tampil sebagai kartu terpisah (“membagikan LIVE” dan “memposting 
 
 Gunakan secara bertanggung jawab dan patuhi ketentuan platform yang berlaku.
 
-**Lisensi.** Repository asli belum mencantumkan berkas lisensi. Hormati hak pembuat asli, dan minta izin kepada Rizki Fadhillah sebelum mendistribusikan ulang.
+**Lisensi.** Repository asli belum mencantumkan berkas lisensi. Oleh karena itu Saya(lyzzer) tidak menambahkannya juga, dan minta izin sebelum mendistribusikan ulang.
 
 **Kontribusi.** Fork repository ini, buat branch baru, commit perubahanmu, lalu buka Pull Request dengan penjelasan yang jelas. Untuk laporan bug, sertakan versi aplikasi, versi Windows, pesan error, dan langkah mereproduksinya.
 
