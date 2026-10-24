@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🎬 Multi Live Chat Overlay
+# 🎥 Multi Live Chat Overlay 🎥
 
-**Satu overlay transparan untuk membaca chat TikTok LIVE, YouTube Live, dan Twitch — lengkap dengan Top Viewers, gift sematan, riwayat bergabung, filter, tema, dan mode hemat RAM.**
+**Satu overlay untuk membaca chat TikTok LIVE, YouTube Live, dan Twitch — lengkap dengan Top Viewers, gift sematan, riwayat bergabung, filter, tema, dan mode hemat RAM.**
 
 ![Version](https://img.shields.io/badge/version-3.4.1-fe2c55?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D4?style=for-the-badge&logo=windows&logoColor=white)
