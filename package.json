@@ -1,8 +1,8 @@
 {
   "name": "multi-live-chat-overlay",
   "version": "3.4.1",
-  "description": "Overlay multi-stream untuk TikTok LIVE, YouTube Live, dan Twitch Chat.",
-  "author": "Rizki Fadhillah",
+  "description": "Overlay multi-stream untuk TikTok LIVE, YouTube Live, dan Twitch Chat.",  
+  "author": "Rizki Fadhillah (Enhanced by Lyzzer)",
   "private": true,
   "type": "module",
   "main": "src/main.js",
@@ -31,7 +31,6 @@
       "src/**/*",
       "mobile/**/*",
       "package.json",
-      "Jalankan Lite.cmd"
     ],
     "win": {
       "target": [
