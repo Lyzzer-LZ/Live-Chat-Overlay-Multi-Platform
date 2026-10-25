@@ -94,7 +94,7 @@ Proyek ini adalah pengembangan lanjutan dari [Tiktok-Live-Chat-Overlay](https://
 
 Mau tanpa instalasi? Unduh **`Multi-Live-Chat-Overlay-<versi>-Portable.exe`** dan jalankan langsung.
 
-> **Windows menampilkan “Windows protected your PC”?** File belum memiliki tanda tangan digital berbayar. Klik **More info → Run anyway**. Kalau ragu, periksa source code dan bangun sendiri (lihat di bawah).
+> **Windows menampilkan “Windows protected your PC”?** File belum memiliki tanda tangan digital berbayar. Klik **More info → Run anyway**. kamu bisa menjalankannya langsung dari source code (lihat Cara 2 di bawah).
 
 ### Cara 2 — Jalankan dari source code
 
@@ -305,7 +305,7 @@ Membatasi **berapa banyak riwayat yang disimpan** di jendela. Entri tertua dibua
 ## 🍳 Resep pengaturan
 
 **Overlay minimalis di atas game**
-1. Tab **Tema**: turunkan **Opasitas panel** ke ±60%, (saya lebih suka opasitas 100%).
+1. Tab **Tema**: turunkan **Opasitas panel** ke 60% atau 100%.
 2. Tab **Lainnya**: nyalakan **Selalu di atas**, **Solo stream**, lalu nyalakan **Klik tembus** (atau tekan `Ctrl+Shift+X`).
 3. Tab **Filter**: matikan **Badge platform** dan **Top viewers** bila tidak diperlukan.
 4. Pilih ukuran jendela **Sedang**.
