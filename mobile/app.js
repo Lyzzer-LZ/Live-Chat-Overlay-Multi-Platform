@@ -16,7 +16,30 @@
     if (feed.querySelector('.empty')) feed.innerHTML='';
     const src=sources.find(s=>s.id===p.sourceId); const who=p.nickname||p.username||'Penonton';
     let badge=activity?'AKTIVITAS':'CHAT', text=p.comment||'';
-    if(activity){ if(p.type==='gift'){badge='GIFT';text=`mengirim ${p.giftName||'Gift'}${Number(p.amount)>1?' × '+p.amount:''}`;} else if(p.type==='follow'){badge='FOLLOW';text='mulai mengikuti';} else if(p.type==='share'){badge='SHARE';text='membagikan live';} else if(p.type==='superchat'){badge='SUPER CHAT';text=[p.amountText,text].filter(Boolean).join(' ');} else if(p.type==='membership'){badge='MEMBER';text=text||'bergabung';} else badge=String(p.type||badge).toUpperCase(); }
+    
+if (activity) {
+  if (p.type === 'gift') {
+    badge = 'GIFT';
+    text = `mengirim ${p.giftName || 'Gift'}${Number(p.amount) > 1 ? ' × ' + p.amount : ''}`;
+  } else if (p.type === 'follow') {
+    badge = 'FOLLOW';
+    text = 'mulai mengikuti';
+  } else if (p.type === 'share') {
+    badge = 'SHARE';
+    text = 'membagikan live';
+  } else if (p.type === 'repost') {
+    badge = 'REPOST';
+    text = 'memosting ulang live';
+  } else if (p.type === 'superchat') {
+    badge = 'SUPER CHAT';
+    text = [p.amountText, text].filter(Boolean).join(' ');
+  } else if (p.type === 'membership') {
+    badge = 'MEMBER';
+    text = text || 'bergabung';
+  } else {
+    badge = String(p.type || badge).toUpperCase();
+  }
+}
     const avatar=p.avatar?`<img class="avatar" src="${esc(p.avatar)}" alt="" referrerpolicy="no-referrer">`:`<span class="avatar">${esc(who.slice(0,1).toUpperCase())}</span>`;
     const card=document.createElement('article');card.className='message'+(activity?' activity':'');
     card.innerHTML=`<div class="meta"><span>${esc(p.sourceLabel||src?.label||platform(p.platform))}</span><b>${esc(badge)}</b></div><div class="person">${avatar}<div><strong>${esc(who)}</strong><p>${esc(text||'(tanpa teks)')}</p></div></div>`;
