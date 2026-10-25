@@ -5,7 +5,7 @@
   "author": "Rizki Fadhillah (Enhanced by Lyzzer)",
   "private": true,
   "type": "module",
-  "main": "src/main.js",
+  "main": "src/main.js"
   "scripts": {
     "start": "electron .",
     "start:lite": "node --max-old-space-size=64 src/lite-server.js",
