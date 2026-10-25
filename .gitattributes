@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Peluncur Windows harus CRLF supaya aman di .cmd/.vbs (termasuk lewat Download ZIP)
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.vbs text eol=crlf
