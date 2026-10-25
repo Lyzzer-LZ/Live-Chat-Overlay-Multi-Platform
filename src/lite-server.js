@@ -2,6 +2,7 @@ import { TikTokLiveConnection, WebcastEvent, ControlEvent } from 'tiktok-live-co
 import { LiveChat } from 'youtube-chat';
 import tmi from 'tmi.js';
 import { createServer } from 'node:http';
+import { randomBytes } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { networkInterfaces } from 'node:os';
 import path from 'node:path';
@@ -11,7 +12,7 @@ import { WebSocketServer } from 'ws';
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'mobile');
 const clients = new Set(), sources = new Map();
 const port = Number(process.env.OVERLAY_PORT || 19876);
-const token = process.env.OVERLAY_TOKEN || 'lite';
+const token = process.env.OVERLAY_TOKEN || randomBytes(32).toString('hex');
 const send = (channel, payload) => { const message = JSON.stringify({ channel, payload }); for (const socket of clients) if (socket.readyState === 1) socket.send(message); };
 const publicSources = () => [...sources.values()].map(({ id, platform, label, stats }) => ({ id, platform, label, stats }));
 const publish = () => send('sources:update', publicSources());
